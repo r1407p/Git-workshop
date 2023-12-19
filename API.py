@@ -3,6 +3,10 @@ import uvicorn
 
 app = FastAPI()
 
+@app.get("/float/{float}")
+def read_float(float: float):
+    return {"float": float}
+
 @app.get("/")
 def read_root():
    return {"Hello": "World"}
