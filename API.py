@@ -3,6 +3,10 @@ import uvicorn
 
 app = FastAPI()
 
+@app.get("int/{num}")
+def read_item(num: int):
+    return {"int": num}
+
 @app.get("/")
 def read_root():
    return {"Hello": "World"}
