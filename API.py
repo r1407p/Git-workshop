@@ -3,9 +3,15 @@ import uvicorn
 
 app = FastAPI()
 
+
 @app.get("int/{num}")
 def read_item(num: int):
     return {"int": num}
+
+@app.get("/float/{float}")
+def read_float(float: float):
+    return {"float": float}
+
 
 @app.get("/")
 def read_root():
